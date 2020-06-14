@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/GroupProject.dir/SortingAlgorithms.cpp.obj"
   "CMakeFiles/GroupProject.dir/main.cpp.obj"
   "GroupProject.exe"
   "GroupProject.exe.manifest"

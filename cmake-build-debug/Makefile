@@ -122,6 +122,33 @@ GroupProject/fast:
 	$(MAKE) -f CMakeFiles\GroupProject.dir\build.make CMakeFiles/GroupProject.dir/build
 .PHONY : GroupProject/fast
 
+SortingAlgorithms.obj: SortingAlgorithms.cpp.obj
+
+.PHONY : SortingAlgorithms.obj
+
+# target to build an object file
+SortingAlgorithms.cpp.obj:
+	$(MAKE) -f CMakeFiles\GroupProject.dir\build.make CMakeFiles/GroupProject.dir/SortingAlgorithms.cpp.obj
+.PHONY : SortingAlgorithms.cpp.obj
+
+SortingAlgorithms.i: SortingAlgorithms.cpp.i
+
+.PHONY : SortingAlgorithms.i
+
+# target to preprocess a source file
+SortingAlgorithms.cpp.i:
+	$(MAKE) -f CMakeFiles\GroupProject.dir\build.make CMakeFiles/GroupProject.dir/SortingAlgorithms.cpp.i
+.PHONY : SortingAlgorithms.cpp.i
+
+SortingAlgorithms.s: SortingAlgorithms.cpp.s
+
+.PHONY : SortingAlgorithms.s
+
+# target to generate assembly for a file
+SortingAlgorithms.cpp.s:
+	$(MAKE) -f CMakeFiles\GroupProject.dir\build.make CMakeFiles/GroupProject.dir/SortingAlgorithms.cpp.s
+.PHONY : SortingAlgorithms.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... GroupProject
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... SortingAlgorithms.obj
+	@echo ... SortingAlgorithms.i
+	@echo ... SortingAlgorithms.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

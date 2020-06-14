@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Kuma/CLionProjects/GroupProject/SortingAlgorithms.cpp">
+			<Option target="GroupProject"/>
+		</Unit>
+		<Unit filename="C:/Users/Kuma/CLionProjects/GroupProject/SortingAlgorithms.h">
+			<Option target="GroupProject"/>
+		</Unit>
 		<Unit filename="C:/Users/Kuma/CLionProjects/GroupProject/main.cpp">
 			<Option target="GroupProject"/>
 		</Unit>

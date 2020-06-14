@@ -3,4 +3,4 @@ project(GroupProject)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(GroupProject main.cpp)
+add_executable(GroupProject main.cpp SortingAlgorithms.cpp SortingAlgorithms.h)
