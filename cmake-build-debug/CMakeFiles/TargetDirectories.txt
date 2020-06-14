@@ -1,3 +1,0 @@
-C:/Users/Kuma/CLionProjects/GroupProject/cmake-build-debug/CMakeFiles/GroupProject.dir
-C:/Users/Kuma/CLionProjects/GroupProject/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Kuma/CLionProjects/GroupProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
