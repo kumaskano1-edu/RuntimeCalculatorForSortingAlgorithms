@@ -21,7 +21,6 @@ vector<int> generateVector(int sizeOfArray, bool sorted, bool reverse) {
     } else if(reverse)  {
         std::sort (v.begin(), v.end(), less<int>());
     }
-    PrintVector(v);
     return v;
 }
 /*Time Check method for the Quick Sort
@@ -29,8 +28,8 @@ vector<int> generateVector(int sizeOfArray, bool sorted, bool reverse) {
 void QuickSortAlgorithmTimeCheck(SortingAlgorithms algorithms, vector<int> arrayTest) {
     auto start = chrono::high_resolution_clock::now(); //measure starting time
     /*Execute my Algorithm*/
-    //algorithms.QuickSort(arrayTest, 0, arrayTest.size()-1);
-    std::sort (arrayTest.begin(), arrayTest.end());
+    algorithms.QuickSort(arrayTest, 0, arrayTest.size()-1);
+    //std::sort (arrayTest.begin(), arrayTest.end());
     auto stop = chrono::high_resolution_clock::now(); //stop the time
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start); //get the difference in MICROSECONDS
     cout << "Time took for Quick Sort: " << duration.count() << " microseconds" << endl; //print it
@@ -39,7 +38,9 @@ void QuickSortAlgorithmTimeCheck(SortingAlgorithms algorithms, vector<int> array
 int main(){
     /*Constants to Use for the Algorithms*/
     SortingAlgorithms algorithms;
-    algorithms.readFromFile("C:\\Users\\Kuma\\CLionProjects\\GroupProject\\ascending.txt");
+    generateVector(10000, false, true);
+    algorithms.readFromFile("C:\\Users\\Kuma\\CLionProjects\\GroupProject\\descending.txt");
     vector<int> loss = algorithms.getList()[0];
-    QuickSortAlgorithmTimeCheck(algorithms, loss);
+    PrintVector(loss);
+   // QuickSortAlgorithmTimeCheck(algorithms, loss);
 }

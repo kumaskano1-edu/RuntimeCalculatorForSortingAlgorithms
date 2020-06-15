@@ -6,7 +6,7 @@
 using namespace std;
 SortingAlgorithms::SortingAlgorithms() {
     std::vector<std::vector<int> > fog(
-            0,
+            3,
             std::vector<int>(0)); // Defaults to zero initial value
     list = fog;
 }
@@ -19,24 +19,19 @@ vector<vector<int>> SortingAlgorithms::getList() {
  * By: Kurmanbek Karaev
  * */
 int SortingAlgorithms::partition(vector<int> &arr,  int left,  int right) {
-    const int mid = left + (right - left) / 2;
-    const int pivot = arr[mid];
-    std::swap(arr[mid], arr[left]);
-    int i = left + 1;
-    int j = right;
-    while (i <= j)
+    int i = left;
+    int pivot_value = arr[right];
+    for (int j = left; j < right; j++)
     {
-        while (i <= j && arr[i] <= pivot)
+        if (arr[j] <= pivot_value)
+        {
+            swap(arr[i], arr[j]);
             i++;
-
-        while (i <= j && arr[j] > pivot)
-            j--;
-
-        if (i < j)
-            std::swap(arr[i], arr[j]);
+        }
     }
-    std::swap(arr[i - 1], arr[left]);
-    return i - 1;
+    swap(arr[i], arr[right]);
+    return i;
+
 }
 /*Method for reading from the file and pushing them to vector within*/
 void SortingAlgorithms::readFromFile(string fileName) {
@@ -50,14 +45,10 @@ void SortingAlgorithms::readFromFile(string fileName) {
     vector<int> array;
     while(getline(reader, line)) { //untill the end of file, there will be a loop
         stringstream ss(line);
-        vector<int> array;
+        vector<int> array = list.at(0);
         while(getline(ss, line, ',')) { //while the end of the line
             array.push_back(std::stoi(line)); //insert the num into the vector
-
         }
-        count++;
-        list.push_back(array);
-        array.push_back(stoi(line)); //insert the num into the vector^M
     }
     list.push_back(array);
 }
