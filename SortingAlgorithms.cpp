@@ -42,11 +42,11 @@ void SortingAlgorithms::readFromFile(string fileName) {
         cout << "not exists file";
         return;
     }
-    vector<int> array;
+    vector<int> array(0);
     while(getline(reader, line)) { //untill the end of file, there will be a loop
         stringstream ss(line);
         while(getline(ss, line, ',')) { //while the end of the line
-            array.push_back(std::stoi(line)); //insert the num into the vector
+            array.push_back(stoi(line)); //insert the num into the vector
         }
     }
     list.push_back(array);

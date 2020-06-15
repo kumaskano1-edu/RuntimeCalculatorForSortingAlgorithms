@@ -14,14 +14,13 @@ void PrintVector(vector<int> given) {
  *             sorted = means you want to generate already sorted array
  *             reverse = if sorted is true and reverse is true. Method will generate reversely sorted vector*/
 vector<int> generateVector(int sizeOfArray, bool sorted, bool reverse) {
-    std::vector<int> v(sizeOfArray);
-    std::generate(v.begin(), v.end(), std::rand);
+    vector<int> v(sizeOfArray);
+    generate(v.begin(), v.end(), std::rand);
     if(sorted) {
         std::sort (v.begin(), v.end());
     } else if(reverse)  {
         std::sort (v.begin(), v.end(), less<int>());
     }
-    PrintVector(v);
     return v;
 }
 /*Time Check method for the Quick Sort
@@ -29,7 +28,7 @@ vector<int> generateVector(int sizeOfArray, bool sorted, bool reverse) {
 void QuickSortAlgorithmTimeCheck(SortingAlgorithms algorithms, vector<int> arrayTest) {
     auto start = chrono::high_resolution_clock::now(); //measure starting time
     /*Execute my Algorithm*/
-    algorithms.QuickSort(arrayTest, 0, arrayTest.size()-1);
+    //algorithms.QuickSort(arrayTest, 0, arrayTest.size()-1);
     //std::sort (arrayTest.begin(), arrayTest.end());
     auto stop = chrono::high_resolution_clock::now(); //stop the time
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start); //get the difference in MICROSECONDS
@@ -39,8 +38,6 @@ void QuickSortAlgorithmTimeCheck(SortingAlgorithms algorithms, vector<int> array
 int main(){
     /*Constants to Use for the Algorithms*/
     SortingAlgorithms algorithms;
-    generateVector(10000, false, false);
-    algorithms.readFromFile("C:\\Users\\Kuma\\CLionProjects\\GroupProject\\ascending.txt");
+    algorithms.readFromFile("C:\\Users\\Kuma\\CLionProjects\\GroupProject\\descending.txt");
     vector<int> loss = algorithms.getList()[0];
-   // QuickSortAlgorithmTimeCheck(algorithms, loss);
 }
