@@ -18,6 +18,7 @@ class SortingAlgorithms {
         void readFromFile(string fileName);
         int partition(vector<int> &arr,  int startIn,  int endIn );
         vector<int> QuickSort(vector<int> &array, int startIn, int endIn);
+        vector<int>InsertionSort(vector<int> &array);
 };
 
 
