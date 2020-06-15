@@ -47,16 +47,19 @@ void SortingAlgorithms::readFromFile(string fileName) {
         cout << "not exists file";
         return;
     }
+    vector<int> array;
     while(getline(reader, line)) { //untill the end of file, there will be a loop
         stringstream ss(line);
         vector<int> array;
         while(getline(ss, line, ',')) { //while the end of the line
             array.push_back(std::stoi(line)); //insert the num into the vector
+
         }
         count++;
         list.push_back(array);
+        array.push_back(stoi(line)); //insert the num into the vector^M
     }
-    reader.close();
+    list.push_back(array);
 }
 /*Iterative Implementation of the Quick Sort
  * By: Kurmanbek*/

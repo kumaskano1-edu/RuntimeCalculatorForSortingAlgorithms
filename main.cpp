@@ -7,7 +7,7 @@ using namespace std;
  * @Params: vector of type Integer*/
 void PrintVector(vector<int> given) {
     for (std::vector<int>::const_iterator i = given.begin(); i != given.end(); ++i)
-        std::cout << *i << ' ';
+        std::cout << *i << ',';
 }
 /*Function for generating different arrays with given size and preferences
  * Parameters: sizeOfarray = size of the array
@@ -19,8 +19,9 @@ vector<int> generateVector(int sizeOfArray, bool sorted, bool reverse) {
     if(sorted) {
         std::sort (v.begin(), v.end());
     } else if(reverse)  {
-        std::sort (v.begin(), v.end(), greater<int>());
+        std::sort (v.begin(), v.end(), less<int>());
     }
+    PrintVector(v);
     return v;
 }
 /*Time Check method for the Quick Sort
@@ -28,7 +29,8 @@ vector<int> generateVector(int sizeOfArray, bool sorted, bool reverse) {
 void QuickSortAlgorithmTimeCheck(SortingAlgorithms algorithms, vector<int> arrayTest) {
     auto start = chrono::high_resolution_clock::now(); //measure starting time
     /*Execute my Algorithm*/
-    algorithms.QuickSort(arrayTest, 0, arrayTest.size()-1);
+    //algorithms.QuickSort(arrayTest, 0, arrayTest.size()-1);
+    std::sort (arrayTest.begin(), arrayTest.end());
     auto stop = chrono::high_resolution_clock::now(); //stop the time
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start); //get the difference in MICROSECONDS
     cout << "Time took for Quick Sort: " << duration.count() << " microseconds" << endl; //print it
@@ -37,6 +39,7 @@ void QuickSortAlgorithmTimeCheck(SortingAlgorithms algorithms, vector<int> array
 int main(){
     /*Constants to Use for the Algorithms*/
     SortingAlgorithms algorithms;
-    vector<int> arrayTest = generateVector(200000, true, false);
-    QuickSortAlgorithmTimeCheck(algorithms, arrayTest);
+    algorithms.readFromFile("C:\\Users\\Kuma\\CLionProjects\\GroupProject\\ascending.txt");
+    vector<int> loss = algorithms.getList()[0];
+    QuickSortAlgorithmTimeCheck(algorithms, loss);
 }
