@@ -6,7 +6,7 @@
 using namespace std;
 SortingAlgorithms::SortingAlgorithms() {
     std::vector<std::vector<int> > fog(
-            3,
+            0,
             std::vector<int>(0)); // Defaults to zero initial value
     list = fog;
 }
@@ -45,7 +45,6 @@ void SortingAlgorithms::readFromFile(string fileName) {
     vector<int> array;
     while(getline(reader, line)) { //untill the end of file, there will be a loop
         stringstream ss(line);
-        vector<int> array = list.at(0);
         while(getline(ss, line, ',')) { //while the end of the line
             array.push_back(std::stoi(line)); //insert the num into the vector
         }

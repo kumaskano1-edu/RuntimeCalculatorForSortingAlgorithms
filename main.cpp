@@ -21,6 +21,7 @@ vector<int> generateVector(int sizeOfArray, bool sorted, bool reverse) {
     } else if(reverse)  {
         std::sort (v.begin(), v.end(), less<int>());
     }
+    PrintVector(v);
     return v;
 }
 /*Time Check method for the Quick Sort
@@ -38,9 +39,8 @@ void QuickSortAlgorithmTimeCheck(SortingAlgorithms algorithms, vector<int> array
 int main(){
     /*Constants to Use for the Algorithms*/
     SortingAlgorithms algorithms;
-    generateVector(10000, false, true);
-    algorithms.readFromFile("C:\\Users\\Kuma\\CLionProjects\\GroupProject\\descending.txt");
+    generateVector(10000, false, false);
+    algorithms.readFromFile("C:\\Users\\Kuma\\CLionProjects\\GroupProject\\ascending.txt");
     vector<int> loss = algorithms.getList()[0];
-    PrintVector(loss);
    // QuickSortAlgorithmTimeCheck(algorithms, loss);
 }
