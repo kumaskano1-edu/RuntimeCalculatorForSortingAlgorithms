@@ -34,6 +34,15 @@ void QuickSortAlgorithmTimeCheck(SortingAlgorithms algorithms, vector<int> array
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start); //get the difference in MICROSECONDS
     cout << "Time took for Quick Sort: " << duration.count() << " microseconds" << endl; //print it
 }
+/* Time check for Insertion Sort*/
+void insertionsort(SortingAlgorithms algorithms, vector<int> arraytest)
+{
+    auto start = chrono::high_resolution_clock::now();
+    algorithms.InsertionSort(arraytest);
+     auto stop = chrono::high_resolution_clock::now();
+     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+     cout << "Time took for Insertion Sort: " << duration.count() << " microseconds" << endl;
+}
 /*The Method for reading teh array from the file*/
 int main(){
     /*Constants to Use for the Algorithms*/
