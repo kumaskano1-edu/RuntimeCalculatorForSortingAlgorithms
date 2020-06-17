@@ -35,9 +35,11 @@ int SortingAlgorithms::partition(vector<int> &arr,  int left,  int right) {
 }
 /*Method for reading from the file and pushing them to vector within*/
 void SortingAlgorithms::readFromFile(string fileName) {
-    string line;
+    //Adarsh Shankar: Minor modification 6/17/2020
+    sstring line;
     int count = 0;
-    ifstream reader(fileName);
+    ifstream reader;
+    reader.open(fileName);
     if(!reader.is_open()) {
         cout << "not exists file";
         return;
