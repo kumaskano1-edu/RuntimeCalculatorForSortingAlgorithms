@@ -94,10 +94,4 @@ for(i = 1; i < array.size(); i++)
 }
 return array;
 }
-
-// Get the value of the List
-vector<vector<int>> SortingAlgoritms::getList()
-{
-    return list;
-}
     

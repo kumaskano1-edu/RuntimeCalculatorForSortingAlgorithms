@@ -47,6 +47,6 @@ void insertionsort(SortingAlgorithms algorithms, vector<int> arraytest)
 int main(){
     /*Constants to Use for the Algorithms*/
     SortingAlgorithms algorithms;
-    algorithms.readFromFile("C:\\Users\\Kuma\\CLionProjects\\GroupProject\\descending.txt");
+    algorithms.readFromFile("./descending.txt");
     vector<int> loss = algorithms.getList()[0];
 }
