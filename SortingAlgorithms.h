@@ -19,6 +19,7 @@ class SortingAlgorithms {
         int partition(vector<int> &arr,  int startIn,  int endIn );
         vector<int> QuickSort(vector<int> &array, int startIn, int endIn);
         vector<int>InsertionSort(vector<int> &array);
+		vector<int> ShellSort(vector<int> &array);
 };
 
 

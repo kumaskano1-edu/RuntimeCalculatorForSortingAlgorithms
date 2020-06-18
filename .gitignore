@@ -1,2 +1,15 @@
 CMakeLists.txt
 cmake-build-debug/
+/.vs/CIS22CGroupProject/v15/.suo
+/.vs/CIS22CGroupProject/v15/Browse.VC.db
+/.vs/GroupProjectCIS22C/v15/.suo
+/.vs/GroupProjectCIS22C/v15/Browse.VC.db
+/.vs/ProjectSettings.json
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/CIS22CGroupProject.sln
+/CIS22CGroupProject.vcxproj
+/CIS22CGroupProject.vcxproj.filters
+/CIS22CGroupProject.vcxproj.user
+/Debug/CIS22CGroupProject.log
+/GroupProjectCIS22C

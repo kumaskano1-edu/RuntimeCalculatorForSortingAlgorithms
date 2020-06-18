@@ -96,4 +96,23 @@ for(i = 1; i < array.size(); i++)
 }
 return array;
 }
+
+/*Shell sort implementation
+By: Michael Pham*/
+vector<int> SortingAlgorithms::ShellSort(vector<int>& array)
+{
+	int size = array.size();
+	for (int interval = size / 2; interval > 0; interval /= 2) {
+		for (int i = interval; i < size; i += 1) {
+			int temp = array[i];
+			int j;
+			//Orders all elemnts in the gap set (shifts them over until sorted)
+			for (j = i; j >= interval && array[j - interval] > temp; j -= interval) {
+				array[j] = array[j - interval];
+			}
+			array[j] = temp;
+		}
+	}
+	return array;
+}
     
