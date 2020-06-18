@@ -5,9 +5,7 @@
 #include <algorithm>
 using namespace std;
 SortingAlgorithms::SortingAlgorithms() {
-    std::vector<std::vector<int> > fog(
-            0,
-            std::vector<int>(0)); // Defaults to zero initial value
+    std::vector<std::vector<int>> fog(0,std::vector<int>(0)); // Defaults to zero initial value
     list = fog;
 }
 /*Method for Geting the vector
