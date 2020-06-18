@@ -11,6 +11,7 @@ void PrintVector(vector<int> given) {
 }
 /*Function for generating different arrays with given size and preferences
  * Parameters: sizeOfarray = size of the array
+
  *             sorted = means you want to generate already sorted array
  *             reverse = if sorted is true and reverse is true. Method will generate reversely sorted vector*/
 vector<int> generateVector(int sizeOfArray, bool sorted, bool reverse) {

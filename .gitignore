@@ -13,3 +13,5 @@ cmake-build-debug/
 /CIS22CGroupProject.vcxproj.user
 /Debug/CIS22CGroupProject.log
 /GroupProjectCIS22C
+*.vs
+*.idea
