@@ -114,3 +114,52 @@ vector<int> SortingAlgorithms::ShellSort(vector<int>& array)
 	return array;
 }
     
+/* Heap Sort
+    by Michelle Pham*/
+vector<int> SortingAlgorithms::HeapSort(vector<int>& array)
+{
+    int size = array.size();
+
+    //build heap
+    for (int i = size / 2 - 1, i >= 0; i--)
+        heapify(array, size, i);
+
+    //
+    for (int i = size - 1; i > 0; i--)
+    {
+        //move root to end
+        int temp = array[0];
+        array[0] = array[i];
+        array[i] = temp;
+
+        //call heapify on heap
+        heapify(0, array, i);
+    }
+}
+
+/*Heapify */
+void SortingAlgorithms::heapify(vector<int>& array, int size, int i)
+{
+    int largest = i;        //largest is root
+    int left = 2 * i + 1;
+    int right = 2 * i + 1;
+
+    //if left child is larger than root
+    if (left < size && array[left] > array[largest])
+        largest = left;
+
+    //if right child is larger that root
+    if (right < size && array[right] > array[largest])
+        largest = right;
+
+    //if largest is not root
+    if (largest != i)
+    {
+        int temp = array[i];
+        array[i] = array[largest];
+        array[largest] = temp;
+
+        //heapify affected subtree
+        heapify(array, size, largest);
+    }
+}
