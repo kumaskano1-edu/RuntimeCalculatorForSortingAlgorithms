@@ -121,7 +121,7 @@ vector<int> SortingAlgorithms::HeapSort(vector<int>& array)
     int size = array.size();
 
     //build heap
-    for (int i = size / 2 - 1, i >= 0; i--)
+    for (int i = size / 2 - 1; i >= 0; i--)
         heapify(array, size, i);
 
     //
@@ -133,8 +133,9 @@ vector<int> SortingAlgorithms::HeapSort(vector<int>& array)
         array[i] = temp;
 
         //call heapify on heap
-        heapify(0, array, i);
+        heapify(array, 0, i);
     }
+    return array;
 }
 
 /*Heapify */
