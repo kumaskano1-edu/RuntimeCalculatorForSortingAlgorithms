@@ -34,7 +34,7 @@ int SortingAlgorithms::partition(vector<int> &arr,  int left,  int right) {
 /*Method for reading from the file and pushing them to vector within*/
 void SortingAlgorithms::readFromFile(string fileName) {
     //Adarsh Shankar: Minor modification 6/17/2020
-    sstring line;
+    string line;
     int count = 0;
     ifstream reader;
     reader.open(fileName);
@@ -113,54 +113,45 @@ vector<int> SortingAlgorithms::ShellSort(vector<int>& array)
 	}
 	return array;
 }
-    
-/* Heap Sort
-    by Michelle Pham*/
-vector<int> SortingAlgorithms::HeapSort(vector<int>& array)
-{
-    int size = array.size();
-
-    //build heap
-    for (int i = size / 2 - 1; i >= 0; i--)
-        heapify(array, size, i);
-
-    //
-    for (int i = size - 1; i > 0; i--)
-    {
-        //move root to end
-        int temp = array[0];
-        array[0] = array[i];
-        array[i] = temp;
-
-        //call heapify on heap
-        heapify(array, 0, i);
-    }
-    return array;
-}
 
 /*Heapify */
-void SortingAlgorithms::heapify(vector<int>& array, int size, int i)
-{
-    int largest = i;        //largest is root
-    int left = 2 * i + 1;
-    int right = 2 * i + 1;
+void SortingAlgorithms:: heapify(vector<int>& arr, int n, int i) 
+{ //Minor modifications: Adarsh Shankar 6/19/20
+	int largest = i; // Initialize largest as root 
+	int l = 2 * i + 1; // left = 2*i + 1 
+	int r = 2 * i + 2; // right = 2*i + 2 
 
-    //if left child is larger than root
-    if (left < size && array[left] > array[largest])
-        largest = left;
+	// If left child is larger than root 
+	if (l < n && arr[l] > arr[largest]) 
+		largest = l; 
 
-    //if right child is larger that root
-    if (right < size && array[right] > array[largest])
-        largest = right;
+	// If right child is larger than largest so far 
+	if (r < n && arr[r] > arr[largest]) 
+		largest = r; 
 
-    //if largest is not root
-    if (largest != i)
-    {
-        int temp = array[i];
-        array[i] = array[largest];
-        array[largest] = temp;
+	// If largest is not root 
+	if (largest != i) { 
+		swap(arr[i], arr[largest]); 
 
-        //heapify affected subtree
-        heapify(array, size, largest);
-    }
-}
+		// Recursively heapify the affected sub-tree 
+		heapify(arr, n, largest); 
+	} 
+} 
+/* Heap Sort
+    by Michelle Pham*/
+void SortingAlgorithms::HeapSort(vector<int>& arr) 
+{ //Minor modifications: Adarsh Shankar 6/19/20
+	int n = arr.size();
+	// Build heap (rearrange array) 
+	for (int i = n / 2 - 1; i >= 0; i--) 
+		heapify(arr, n, i); 
+
+	// One by one extract an element from heap 
+	for (int i = n - 1; i >= 0; i--) { 
+		// Move current root to end 
+		swap(arr[0], arr[i]); 
+
+		// call max heapify on the reduced heap 
+		heapify(arr, i, 0); 
+	} 
+} 
